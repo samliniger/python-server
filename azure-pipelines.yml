@@ -8,3 +8,15 @@ pool:
 steps:
 - script: docker build -f Dockerfile -t $(imageNameNew) .
   displayName: 'docker build'
+- script: docker run -d --rm -p 80:8000  -v $PWD/web/:/usr/src/app/web --name running-server python-server
+  displayName: 'docker run'
+- script: |
+    expectedResult='HelloWorld'
+    testResult=$(curl localhost/HelloWorld.txt)
+    if [ "$testResult" = "$expectedResult" ]; then
+        echo "test ok"
+    else
+        echo "test nok"
+        exit 1
+    fi
+  displayName: 'test'
