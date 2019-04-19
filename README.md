@@ -5,7 +5,7 @@
 | ----------------------------------------- | -------------------
 | python-server                                     | [![Build Status](https://dev.azure.com/samliniger/python-server/_apis/build/status/samliniger.python-server?branchName=master)](https://dev.azure.com/samliniger/python-server/_build/latest?definitionId=1&branchName=master)
 
-#How-to
+# How-to
 Start the server
 
 ```console
