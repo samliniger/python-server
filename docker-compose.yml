@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "80:8000"
+    volumes:
+      - ./web:/usr/src/app/web
+    privileged: true
