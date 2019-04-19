@@ -1,0 +1,10 @@
+trigger:
+- master
+- dev
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+steps:
+- script: docker build -f Dockerfile -t $(imageNameNew) .
+  displayName: 'docker build'
