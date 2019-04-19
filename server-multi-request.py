@@ -16,3 +16,4 @@ i = 0
 while i < 2:
   httpd.handle_request()
   i += 1
+httpd.socket.close()
