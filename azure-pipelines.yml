@@ -1,12 +1,13 @@
 trigger:
 - master
 - dev
-
+variables:
+  imageName: 'python-server'
 pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: docker build -f Dockerfile -t $(imageNameNew) .
+- script: docker build -f Dockerfile -t $(imageName) .
   displayName: 'docker build'
 - script: docker run -d --rm -p 80:8000  -v $PWD/web/:/usr/src/app/web --name running-server python-server
   displayName: 'docker run'
