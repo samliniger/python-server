@@ -1,4 +1,5 @@
 # python-server
+HTTP Server to expose a web directory to serve different files for a configurable amount of requests.
 ## Build Status
 
 | Build                                     | Status               
@@ -15,5 +16,5 @@ Without docker compose
 
 ```console
 docker build -t python-server .
-docker run -it --rm -p 80:8000  -v $PWD/web/:/usr/src/app/web --name running-server python-server
+docker run -it --rm -p 80:8000  -e "REQUEST_LIMIT=2" -v $PWD/web/:/usr/src/app/web --name running-server python-server
 ```
