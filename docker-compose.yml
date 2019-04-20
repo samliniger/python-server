@@ -1,6 +1,8 @@
 version: '3'
 services:
   web:
+    environment:
+      - REQUEST_LIMIT=2
     build: .
     ports:
       - "80:8000"
