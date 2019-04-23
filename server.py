@@ -1,6 +1,6 @@
 #Server directory web for multiple requests
-import http.server
-import socketserver
+import SimpleHTTPServer
+import SocketServer
 import os
 
 try:
@@ -12,8 +12,8 @@ PORT = 8000
 web_dir = os.path.join(os.path.dirname(__file__), 'web')
 os.chdir(web_dir)
 
-Handler = http.server.SimpleHTTPRequestHandler
-httpd = socketserver.TCPServer(("", PORT), Handler)
+Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
+httpd = SocketServer.TCPServer(("", PORT), Handler)
 print("serving at port", PORT)
 
 i = 1
